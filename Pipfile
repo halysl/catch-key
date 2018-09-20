@@ -4,10 +4,9 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-evdev = "*"
+evdev = "*" 
 
 [dev-packages]
-pylint = "*"
 
 [requires]
 python_version = "3.6"
