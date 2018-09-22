@@ -1,10 +1,10 @@
 # -*- coding:utf-8 -*-
 
-import keylogger
-import time
 import logging
 import os
+import time
 
+import keylogger
 
 curr_path = os.path.dirname(os.path.abspath(__file__))
 
