@@ -7,15 +7,14 @@ import time
 import keylogger
 
 curr_path = os.path.dirname(os.path.abspath(__file__))
-
+file_name = 'catch_key.log'
 
 def get_logger():
     fmt = "%(asctime)-15s %(levelname)s %(filename)s %(lineno)d %(process)d %(message)s"
     datefmt = "%a %d %b %Y %H:%M:%S"
     formatter = logging.Formatter(fmt, datefmt)
 
-    filename = 'catch_key.log'
-    filepath = os.path.join(curr_path, filename)
+    filepath = os.path.join(curr_path, file_name)
     fh = logging.FileHandler(filepath, mode='a', encoding=None, delay=False)
     fh.setLevel(logging.INFO)
     fh.setFormatter(formatter)
