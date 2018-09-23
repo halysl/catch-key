@@ -7,10 +7,11 @@ todo list:
 3 输出信息
 """
 
-import count
 import os
 
+import count
 from count import count_char, print_info
+
 
 def test_read_file():
     """
@@ -40,6 +41,6 @@ def test_print_info():
     """
     @test_func: print_info()
     @func_param: data dict
-    @test_desc: 检测是否可以统计击打键盘数   
+    @test_desc: 检测是否可以正确输出
     """
     pass
