@@ -19,12 +19,12 @@ keyboard = (ct.c_char * 32)()
 # keys to watch
 shift_keys = ((6,4), (7,64))
 modifiers = {
-    "left shift": (6,4),
-    "right shift": (7,64),
-    "left ctrl": (4,32),
-    "right ctrl": (13,2),
-    "left alt": (8,1),
-    "right alt": (13,16)
+    "left_shift": (6,4),
+    "right_shift": (7,64),
+    "left_ctrl": (4,32),
+    "right_ctrl": (13,2),
+    "left_alt": (8,1),
+    "right_alt": (13,16)
 }
 last_pressed = set()
 last_pressed_adjusted = set()
@@ -106,7 +106,7 @@ key_mapping = {
     8: {
         #0b00000001: "<left alt>",
         0b00000010: "space",
-        0b00000100: "<caps lock>",
+        0b00000100: "<caps_lock>",
     },
     13: {
         #0b00000010: "<right ctrl>",

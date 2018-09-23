@@ -22,7 +22,24 @@ def test_read_file():
     assert result
 
 def test_count_char():
-    pass
+    """
+    @test_func: count_char()
+    @func_param: data str
+    @test_desc: 检测是否可以统计击打键盘数
+    """
+    data1 = 'a w d a c x w d a s d w j h n k a h n w d m a s n d e j h a d s b f k k u a w a s d l c j l k a j r w'
+    data2 = 'right_shift right_shift left_ctrl left_ctrl right_ctrl'
+    data = ' '.join([data1, data2])
+
+    expect = {'a': 9, 'w': 6, 'd': 7, 'c': 2, 'x': 1, 's': 4, 'j': 4, 'h': 3, 'n': 3, 'k': 4, 'm': 1, 'e': 1, 'b': 1, 'f': 1, 'u': 1, 'l': 2, 'r': 1, 'right_shift': 2, 'left_ctrl': 2, 'right_ctrl': 1}
+    actual = count.count_char(data)
+
+    assert expect == actual
 
 def test_print_info():
+    """
+    @test_func: print_info()
+    @func_param: data dict
+    @test_desc: 检测是否可以统计击打键盘数   
+    """
     pass
