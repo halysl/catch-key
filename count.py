@@ -35,8 +35,19 @@ def count_char(data):
 
     return dic
 
-def print_info():
-    pass
+def print_info(dic):
+    result = sorted(dic.items(), key=lambda item:item[1], reverse=True)
+    first_line = '当前输入字符统计：\n'
+    lines = []
+    for i in result:
+        line = ''.join([i[0], ':', str(i[1])])
+        lines.append(line)
+    
+    print(first_line)
+    for line in lines:
+        print(line)
 
 if __name__ == "__main__":
-    read_file()
+    data = read_file()
+    result = count_char(data)
+    print_info(result)
