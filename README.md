@@ -89,3 +89,7 @@ M:1
 ```
 
 可见打错字还是蛮多的（逃。
+
+
+@error
+- 当前发现一个error，可能和ctypes模块有关系，显示是Segmentation fault in Linux。具体排查放在功能完成后。
