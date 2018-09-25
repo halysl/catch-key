@@ -8,6 +8,8 @@ evdev = "*"
 
 [dev-packages]
 rope = "*"
+pytest = "*"
+mock = "*"
 
 [requires]
 python_version = "3.6"
