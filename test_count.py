@@ -8,8 +8,9 @@ todo list:
 """
 
 import os
-
+from io import StringIO
 import count
+import mock
 from count import count_char, print_info
 
 
@@ -43,4 +44,9 @@ def test_print_info():
     @func_param: data dict
     @test_desc: 检测是否可以正确输出
     """
-    pass
+    dic = {'a': 12,'b': 31, 'c':48}
+    expect = '当前输入字符统计：\n\nc:48\nb:31\na:12\n'
+    
+    with mock.patch('sys.stdout', new=StringIO()) as fake_out:
+        print_info(dic)
+        assert fake_out.getvalue() == expect
