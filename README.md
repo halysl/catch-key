@@ -88,12 +88,7 @@ L:1
 W:1
 ```
 
-可见打错字还是蛮多的（逃。
-
-
-@error
-- 当前发现一个error，可能和ctypes模块有关系，显示是Segmentation fault in Linux。具体排查放在功能完成后。
-- 当前发现一个error，报错信息为：symbol not found，可能和x11有关系。具体排查无限期拖延。
+可见打错字还是蛮多的（tao.
 
 @使用测试
 将该脚本作为系统启动项，循环测试。
