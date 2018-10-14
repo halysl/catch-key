@@ -4,6 +4,7 @@ import logging
 import os
 import sys
 import time
+import imp
 
 curr_path = os.path.dirname(os.path.abspath(__file__))
 file_name = 'catch_key.log'
@@ -36,11 +37,27 @@ def define_system():
 
 def install_keylogger(system):
     if system == 'linux':
-        pass
+        try:
+            imp.find_module('python-xlib')
+            found = True
+        except Exception:
+            found = False
+        can_be_use = os.path.exists('../Keylogger/linux/keylogger.py')
     elif system == 'darwin':
-        pass
+        can_be_use = os.path.exists('/usr/local/bin/keylogger')
     else:
         pass
+    
+    if can_be_use:
+        pass
+    else:
+        if system == 'linux':
+            if not found:
+                print('请安装python-xlib库\npip install python-xlib')
+        elif system == 'darwin':
+            print('请编译keylogger\ncd Keylogger/mac\nmake && make install')
+        else:
+            print('暂不操作')
 
 
 def start_keylogger(t, modifiers, keys):
