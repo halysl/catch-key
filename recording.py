@@ -54,15 +54,20 @@ def install_keylogger(system):
         if system == 'linux':
             if not found:
                 print('请安装python-xlib库\npip install python-xlib')
+                sys.exit(-1)
         elif system == 'darwin':
             print('请编译keylogger\ncd Keylogger/mac\nmake && make install')
+            sys.exit(-1)
         else:
             print('暂不操作')
+            sys.exit(-1)
 
 
-def start_keylogger(t, modifiers, keys):
-    pass
+def start_keylogger():
+    logger.info('process to run...')
 
 
 if __name__ == "__main__":
-    pass
+    system = define_system()
+    install_keylogger(system)
+    start_keylogger()
